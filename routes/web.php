@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/db-migrate', function(){
+  Artisan::call('migrate');
+  echo Artisan::output();
+});
+
 require __DIR__.'/auth.php';
