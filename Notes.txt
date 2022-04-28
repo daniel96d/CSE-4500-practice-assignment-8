@@ -1,0 +1,84 @@
+Notes For CSE4500
+
+Review:
+  Server Client uses a request response style communication
+    this means that the application start's and ends with the client Request
+  The architecture is a two Tier
+    Presentation(Front end)
+    Data(Backend)
+
+  Presentation
+    sends requests
+      Http Message
+        Request
+          GET
+            Resulted from HTTP 1.0 and was the only one on http at the time
+            Used to retrieve documents from the backend
+          POST
+            used to upload from frontend to backend
+          PUT
+            Similar to POST, but PUT is for updating; It is good for partial information
+          DELETE
+            Destroy an instance in the Backend
+        Response
+          Code
+            2xx
+              This communication means that there was a successful response
+            3xx
+              This code means: "Request has been redirected to another resource"
+            4xx
+          Content
+            Web Page
+            JSON
+              A text stream that has its own format
+              useful when sending from backend to frontend
+      HTTPS
+        Force HTTPS
+        *This is related to the security warnings on shady websites; The HTTPS will make the sent information in an encrypted format
+    Business Logic
+      Handle Requests
+        Language
+          python, php, .. etc.
+        Framework
+          Request lifecycle
+            Create instance
+            Dependency injection
+              *Loads the libraries
+            Application goes through configuration
+              2 types of config for ours
+                System config
+                  *Setting won't be changed form environment to environment
+                .ENV
+                  *These settings may changed
+                  *Database credentials are setup Here
+            Starting point:
+              ROUTES
+                *Defines all the services that can be provided to the front ends
+              MVC
+                *Architecture of your specific architecture
+                *3 Layers
+                Model
+                  ORM
+                  Relationships
+                    One-to-One
+                    one-to-many
+                    Many-to-Many
+
+
+                View
+                  *Used to display data for the end user
+                  Directory structure
+                  Template engine
+                    *.blade files
+                Controller
+                  4 basic functions CRUD
+                    *Create, Read, Update, Delete
+                  Resource Controllers
+                    6 methods come with the resource controller
+                  CSRF
+    Data
+      Storing Data
+        SQL DB
+        noSQL DB
+
+Midterm
